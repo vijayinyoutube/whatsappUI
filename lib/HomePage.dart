@@ -19,20 +19,16 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           bottom: TabBar(
             indicatorColor: Colors.white,
-            //   labelPadding: EdgeInsets.symmetric(horizontal: 1.0),
             tabs: [
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  child: Center(
-                      child: Icon(
+              Tab(
+                child: Center(
+                  child: Icon(
                     Icons.camera_alt,
                     size: 20,
-                  )),
+                  ),
                 ),
               ),
-              Container(
-                height: 50,
+              Tab(
                 child: Center(
                   child: Text(
                     "CHATS",
@@ -40,8 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              Container(
-                height: 50,
+              Tab(
                 child: Center(
                   child: Text(
                     "STATUS",
@@ -49,8 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              Container(
-                height: 50,
+              Tab(
                 child: Center(
                   child: Text(
                     "CALLS",
@@ -66,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
               size: 27.5,
             ),
             SizedBox(
-              width: 15,
+              width: 30,
             ),
             Icon(
               Icons.settings,
