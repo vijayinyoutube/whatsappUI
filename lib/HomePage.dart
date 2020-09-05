@@ -1,11 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/screens/Chats.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
+  TabController _tabController;
+  List<IconData> icons = <IconData>[
+    (Icons.camera),
+    (Icons.message),
+    (Icons.add),
+    (Icons.call),
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = new TabController(vsync: this, length: icons.length);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -18,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
             style: TextStyle(fontWeight: FontWeight.w500, fontSize: 25),
           ),
           bottom: TabBar(
+            controller: _tabController,
             indicatorColor: Colors.white,
             tabs: [
               Tab(
@@ -63,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 30,
             ),
             Icon(
-              Icons.settings,
+              Icons.more_vert,
               size: 27.5,
             ),
             SizedBox(
@@ -71,11 +94,27 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-        body: Center(child: Text('Press the button below!')),
+        body: TabBarView(
+          controller: _tabController,
+          children: [
+            Center(child: Text("Camera")),
+            ChatPage(),
+            Center(child: Text("Status")),
+            Center(child: Text("Calls")),
+          ],
+        ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.message),
           backgroundColor: Colors.green,
+          onPressed: () {},
+          child: TabBarView(
+            controller: _tabController,
+            children: [
+              Icon(icons[0]),
+              Icon(icons[1]),
+              Icon(icons[2]),
+              Icon(icons[3]),
+            ],
+          ),
         ),
       ),
     );
