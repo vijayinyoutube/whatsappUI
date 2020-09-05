@@ -36,9 +36,12 @@ class _ChatPageState extends State<ChatPage> {
                     mychat[index].no_of_messages != null
                         ? Text(
                             (mychat[index].time),
-                            style: TextStyle(color: Colors.green),
+                            style: TextStyle(color: Colors.green, fontSize: 14),
                           )
-                        : Text((mychat[index].time))
+                        : Text(
+                            (mychat[index].time),
+                            style: TextStyle(fontSize: 14),
+                          )
                   ],
                 ),
                 subtitle: Padding(
@@ -58,9 +61,13 @@ class _ChatPageState extends State<ChatPage> {
                                 )
                               : SizedBox(),
                           SizedBox(width: 2.5),
-                          Text(
-                            (mychat[index].message),
-                            style: TextStyle(fontSize: 15),
+                          Container(
+                            width: (MediaQuery.of(context).size.width) - 150,
+                            child: Text(
+                              (mychat[index].message),
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(fontSize: 15),
+                            ),
                           ),
                         ],
                       ),

@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage>
               size: 27.5,
             ),
             SizedBox(
-              width: 30,
+              width: 10,
             ),
             Icon(
               Icons.more_vert,
