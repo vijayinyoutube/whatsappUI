@@ -18,9 +18,12 @@ class _ChatPageState extends State<ChatPage> {
             children: [
               ListTile(
                 leading: CircleAvatar(
-                  backgroundImage: AssetImage(mychat[index].avatar),
+                  backgroundImage: AssetImage(
+                    mychat[index].avatar,
+                  ),
                   foregroundColor: Colors.transparent,
-                  radius: 27,
+                  backgroundColor: Colors.transparent,
+                  radius: 30,
                 ),
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

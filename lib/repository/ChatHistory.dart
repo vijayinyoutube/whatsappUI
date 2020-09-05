@@ -20,12 +20,12 @@ class ChatHistory {
 List<ChatHistory> mychat = [
   ChatHistory(
     name: "Alice",
-    message: "GM... 👋",
+    message: "👋 GM... ",
     time: "11:30 AM",
     isReceived: true,
     no_of_messages: 1,
     isSent: false,
-    avatar: "images/contact.png",
+    avatar: "images/Alice.webp",
   ),
   ChatHistory(
     name: "Bob",
@@ -34,7 +34,7 @@ List<ChatHistory> mychat = [
     isReceived: true,
     isSent: false,
     no_of_messages: 2,
-    avatar: "images/contact.png",
+    avatar: "images/Bob.webp",
   ),
   ChatHistory(
     name: "Richard",
@@ -42,7 +42,7 @@ List<ChatHistory> mychat = [
     time: "8:00 AM",
     isReceived: false,
     isSent: true,
-    avatar: "images/contact.png",
+    avatar: "images/Richard.webp",
   ),
   ChatHistory(
     name: "Raju",
@@ -51,7 +51,7 @@ List<ChatHistory> mychat = [
     isReceived: true,
     isSent: false,
     no_of_messages: 1,
-    avatar: "images/contact.png",
+    avatar: "images/Raju.webp",
   ),
   ChatHistory(
     name: "Robert Bell",
@@ -59,7 +59,7 @@ List<ChatHistory> mychat = [
     time: "Thursday",
     isReceived: false,
     isSent: true,
-    avatar: "images/contact.png",
+    avatar: "images/Robert.png",
   ),
   ChatHistory(
     name: "Flutter Group",
@@ -67,7 +67,7 @@ List<ChatHistory> mychat = [
     time: "Thursday",
     isReceived: false,
     isSent: true,
-    avatar: "images/contact.png",
+    avatar: "images/group.png",
   ),
   ChatHistory(
     name: "Santy",
@@ -75,14 +75,14 @@ List<ChatHistory> mychat = [
     time: "11-08-2020",
     isReceived: false,
     isSent: true,
-    avatar: "images/contact.png",
+    avatar: "images/Santy.png",
   ),
   ChatHistory(
     name: "Ravi",
-    message: "hai Vijay! GM... 👋",
+    message: "Okay",
     time: "15-09-2020",
     isReceived: false,
     isSent: true,
-    avatar: "images/contact.png",
+    avatar: "images/Ravi.webp",
   ),
 ];
