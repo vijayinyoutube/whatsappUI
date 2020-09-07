@@ -20,11 +20,11 @@ class ChatHistory {
 List<ChatHistory> mychat = [
   ChatHistory(
     name: "Alice",
-    message: "👋 GM... ",
+    message: " 👋  GM...",
     time: "11:30 AM",
     isReceived: true,
-    no_of_messages: 1,
     isSent: false,
+    no_of_messages: 1,
     avatar: "assets/images/Alice.webp",
   ),
   ChatHistory(
