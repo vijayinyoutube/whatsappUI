@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/screen/Status_View_Billy.dart';
 import 'package:whatsapp/screen/Status_View_Bobby.dart';
 import 'package:whatsapp/screen/Status_View_Ravi.dart';
 
@@ -129,6 +130,53 @@ class _StatusPageState extends State<StatusPage> {
               padding: EdgeInsets.only(top: 5),
               child: Text(
                 "10 minutes ago",
+                style: TextStyle(fontSize: 17.5, color: Colors.grey),
+              ),
+            ),
+          ),
+          SizedBox(height: 5),
+          Container(
+            height: 40,
+            width: double.infinity,
+            color: Colors.grey[100],
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 20.0,
+                top: 10,
+              ),
+              child: Text(
+                "Viewed updates",
+                style: TextStyle(
+                    fontSize: 17.5,
+                    color: (Color.fromRGBO(18, 140, 126, 0.8)),
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+          SizedBox(height: 5),
+          ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BillyStatus(),
+                ),
+              );
+            },
+            leading: CircleAvatar(
+              backgroundImage: AssetImage("assets/images/Billy.png"),
+              foregroundColor: Colors.transparent,
+              backgroundColor: Colors.transparent,
+              radius: 30,
+            ),
+            title: Text(
+              "Billy",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
+            subtitle: Padding(
+              padding: EdgeInsets.only(top: 5),
+              child: Text(
+                "Today, 8:33 AM",
                 style: TextStyle(fontSize: 17.5, color: Colors.grey),
               ),
             ),

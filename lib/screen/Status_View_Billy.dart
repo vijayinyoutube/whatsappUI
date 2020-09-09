@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:story_view/controller/story_controller.dart';
 import 'package:story_view/story_view.dart';
 
-class RaviStatus extends StatefulWidget {
-  RaviStatus({Key key}) : super(key: key);
+class BillyStatus extends StatefulWidget {
+  BillyStatus({Key key}) : super(key: key);
 
   @override
-  _RaviStatusState createState() => _RaviStatusState();
+  _BillyStatusState createState() => _BillyStatusState();
 }
 
-class _RaviStatusState extends State<RaviStatus> {
+class _BillyStatusState extends State<BillyStatus> {
   final mycontroller = StoryController();
   final List<StoryItem> mystoryItems = [
     StoryItem.pageImage(
-        caption: "Flutter", url: "assets/images/Flutter.png", controller: null),
+        caption: "Flutter is Great 🥳",
+        url: "assets/images/FlutterLogo.png",
+        controller: null),
   ];
   @override
   Widget build(BuildContext context) {
@@ -38,18 +40,18 @@ class _RaviStatusState extends State<RaviStatus> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => RaviStatus(),
+                      builder: (context) => BillyStatus(),
                     ),
                   );
                 },
                 leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/Ravi.webp"),
+                  backgroundImage: AssetImage("assets/images/Billy.png"),
                   foregroundColor: Colors.transparent,
                   backgroundColor: Colors.transparent,
                   radius: 30,
                 ),
                 title: Text(
-                  "Ravi",
+                  "Billy",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
@@ -58,7 +60,7 @@ class _RaviStatusState extends State<RaviStatus> {
                 subtitle: Padding(
                   padding: EdgeInsets.only(top: 5),
                   child: Text(
-                    "Just now",
+                    "Today, 8:33 AM",
                     style: TextStyle(fontSize: 15, color: Colors.grey[350]),
                   ),
                 ),
