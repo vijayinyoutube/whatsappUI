@@ -6,7 +6,7 @@ WhatsApp UI clone | Flutter app
 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/58719230/92628090-eb777e00-f2e9-11ea-8d45-7f8137d16f2c.png">
+<img src="https://user-images.githubusercontent.com/58719230/92628090-eb777e00-f2e9-11ea-8d45-7f8137d16f2c.png" width="100%">
 </p>
 
 ## Flutter
