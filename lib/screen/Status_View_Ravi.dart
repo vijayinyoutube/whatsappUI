@@ -13,7 +13,10 @@ class _RaviStatusState extends State<RaviStatus> {
   final mycontroller = StoryController();
   final List<StoryItem> mystoryItems = [
     StoryItem.pageImage(
-        caption: "Flutter", url: "assets/images/Flutter.png", controller: null),
+        imageFit: BoxFit.contain,
+        caption: "Flutter",
+        url: "assets/images/Flutter.png",
+        controller: null),
   ];
   @override
   Widget build(BuildContext context) {

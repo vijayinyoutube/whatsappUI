@@ -13,6 +13,7 @@ class _BillyStatusState extends State<BillyStatus> {
   final mycontroller = StoryController();
   final List<StoryItem> mystoryItems = [
     StoryItem.pageImage(
+        imageFit: BoxFit.contain,
         caption: "Flutter is Great 🥳",
         url: "assets/images/FlutterLogo.png",
         controller: null),
