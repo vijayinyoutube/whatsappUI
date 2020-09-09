@@ -4,11 +4,11 @@ import 'package:whatsapp/HomePage.dart';
 
 var firstCamera;
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  final cameras = await availableCameras();
+  // WidgetsFlutterBinding.ensureInitialized();
+  // final cameras = await availableCameras();
 
   
-  firstCamera = cameras.first;
+  // firstCamera = cameras.first;
 
   runApp(MyApp());
 }
@@ -22,9 +22,12 @@ class MyApp extends StatelessWidget {
         splashColor: Colors.transparent,
       ),
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(
-        camera: firstCamera,
-      ),
+      home:MyHomePage(), 
+      
+      
+      // MyHomePage(
+      //   camera: firstCamera,
+      // ),
     );
   }
 }

@@ -7,11 +7,12 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:whatsapp/screen/CameraPage.dart';
 import 'package:whatsapp/screen/ChatPage.dart';
+import 'package:whatsapp/screen/StatusPage.dart';
 
 class MyHomePage extends StatefulWidget {
-  final CameraDescription camera;
+  // final CameraDescription camera;
 
-  MyHomePage({@required this.camera});
+  // MyHomePage({@required this.camera});
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -35,11 +36,11 @@ class _MyHomePageState extends State<MyHomePage>
     super.initState();
     _tabController =
         new TabController(length: icons.length, vsync: this, initialIndex: 1);
-    _controller = CameraController(
-      widget.camera,
-      ResolutionPreset.medium,
-    );
-    _initializeControllerFuture = _controller.initialize();
+    // _controller = CameraController(
+    //   widget.camera,
+    //   ResolutionPreset.medium,
+    // );
+    // _initializeControllerFuture = _controller.initialize();
   }
 
   @override
@@ -118,13 +119,14 @@ class _MyHomePageState extends State<MyHomePage>
         body: TabBarView(
           controller: _tabController,
           children: [
-            Camerapage(
-              camera: widget.camera,
-            ),
-            Chatpage(),
             Center(
-              child: Text("Status"),
+              child: Text("Camera"),
             ),
+            // Camerapage(
+            //   camera: widget.camera,
+            // ),
+            Chatpage(),
+            StatusPage(),
             Center(
               child: Text("Calls"),
             ),
