@@ -31,7 +31,8 @@ dependencies:
   camera:
   path_provider:
   path:
-
+  story_view: ^0.12.3
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
