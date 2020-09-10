@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:whatsapp/screen/Calls/CallPage.dart';
 import 'package:whatsapp/screen/Chats/ChatPage.dart';
 import 'package:whatsapp/screen/Status/StatusPage.dart';
 
@@ -72,17 +73,52 @@ class _MyHomePageState extends State<MyHomePage>
               ),
               Tab(
                 child: Center(
-                  child: Text(
-                    "CHATS",
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "CHATS",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 15),
+                      ),
+                      ClipOval(
+                        child: Container(
+                          width: 20,
+                          height: 20,
+                          color: Colors.grey[100],
+                          child: Center(
+                            child: Text(
+                              "3",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15.5,
+                                  color: Colors.green),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
               Tab(
                 child: Center(
-                  child: Text(
-                    "STATUS",
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        "STATUS",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 15),
+                      ),
+                      ClipOval(
+                        child: Container(
+                          width: 8.5,
+                          height: 8.5,
+                          color: Colors.grey[350],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -124,9 +160,7 @@ class _MyHomePageState extends State<MyHomePage>
             // ),
             Chatpage(),
             StatusPage(),
-            Center(
-              child: Text("Calls"),
-            ),
+            Callpage(),
           ],
         ),
         floatingActionButton: FloatingActionButton(

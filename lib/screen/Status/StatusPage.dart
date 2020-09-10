@@ -53,131 +53,29 @@ class _StatusPageState extends State<StatusPage> {
             ),
           ),
           SizedBox(height: 5),
-          Container(
-            height: 40,
-            width: double.infinity,
-            color: Colors.grey[100],
-            child: Padding(
-              padding: const EdgeInsets.only(
-                left: 20.0,
-                top: 10,
-              ),
-              child: Text(
-                "Recent updates",
-                style: TextStyle(
-                    fontSize: 17.5,
-                    color: (Color.fromRGBO(18, 140, 126, 0.8)),
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
+          titleBar("Recent updates"),
+          SizedBox(height: 5),
+          myStatusListTile(
+            image: "assets/images/Ravi.webp",
+            name: "Ravi",
+            time: "Just now",
+            statusno: 0,
+          ),
+          myDivider(),
+          myStatusListTile(
+            image: "assets/images/Bobby.png",
+            name: "Bobby",
+            time: "10 minutes ago",
+            statusno: 1,
           ),
           SizedBox(height: 5),
-          ListTile(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => StatusViewPage(statusno: 0),
-                ),
-              );
-            },
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("assets/images/Ravi.webp"),
-              foregroundColor: Colors.transparent,
-              backgroundColor: Colors.transparent,
-              radius: 30,
-            ),
-            title: Text(
-              "Ravi",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            subtitle: Padding(
-              padding: EdgeInsets.only(top: 5),
-              child: Text(
-                "Just now",
-                style: TextStyle(fontSize: 17.5, color: Colors.grey),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 75, right: 10),
-            child: Divider(
-              thickness: 0.85,
-            ),
-          ),
-          ListTile(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => StatusViewPage(statusno: 1),
-                ),
-              );
-            },
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("assets/images/Bobby.png"),
-              foregroundColor: Colors.transparent,
-              backgroundColor: Colors.transparent,
-              radius: 30,
-            ),
-            title: Text(
-              "Bobby",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            subtitle: Padding(
-              padding: EdgeInsets.only(top: 5),
-              child: Text(
-                "10 minutes ago",
-                style: TextStyle(fontSize: 17.5, color: Colors.grey),
-              ),
-            ),
-          ),
+          titleBar("Viewed updates"),
           SizedBox(height: 5),
-          Container(
-            height: 40,
-            width: double.infinity,
-            color: Colors.grey[100],
-            child: Padding(
-              padding: const EdgeInsets.only(
-                left: 20.0,
-                top: 10,
-              ),
-              child: Text(
-                "Viewed updates",
-                style: TextStyle(
-                    fontSize: 17.5,
-                    color: (Color.fromRGBO(18, 140, 126, 0.8)),
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          SizedBox(height: 5),
-          ListTile(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => StatusViewPage(statusno: 2),
-                ),
-              );
-            },
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("assets/images/Billy.png"),
-              foregroundColor: Colors.transparent,
-              backgroundColor: Colors.transparent,
-              radius: 30,
-            ),
-            title: Text(
-              "Billy",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            subtitle: Padding(
-              padding: EdgeInsets.only(top: 5),
-              child: Text(
-                "Today, 8:33 AM",
-                style: TextStyle(fontSize: 17.5, color: Colors.grey),
-              ),
-            ),
+          myStatusListTile(
+            image: "assets/images/Billy.png",
+            name: "Billy",
+            time: "Today, 8:33 AM",
+            statusno: 2,
           ),
         ],
       ),
@@ -195,4 +93,65 @@ class _StatusPageState extends State<StatusPage> {
       ),
     );
   }
+
+  Widget myStatusListTile(
+      {String image, String name, String time, int statusno}) {
+    return ListTile(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => StatusViewPage(statusno: statusno),
+          ),
+        );
+      },
+      leading: CircleAvatar(
+        backgroundImage: AssetImage(image),
+        foregroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
+        radius: 30,
+      ),
+      title: Text(
+        name,
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+      ),
+      subtitle: Padding(
+        padding: EdgeInsets.only(top: 5),
+        child: Text(
+          time,
+          style: TextStyle(fontSize: 17.5, color: Colors.grey),
+        ),
+      ),
+    );
+  }
+}
+
+Widget myDivider() {
+  return Padding(
+    padding: const EdgeInsets.only(left: 75, right: 10),
+    child: Divider(
+      thickness: 0.85,
+    ),
+  );
+}
+
+Widget titleBar(String title) {
+  return Container(
+    height: 40,
+    width: double.infinity,
+    color: Colors.grey[100],
+    child: Padding(
+      padding: const EdgeInsets.only(
+        left: 20.0,
+        top: 10,
+      ),
+      child: Text(
+        title,
+        style: TextStyle(
+            fontSize: 17.5,
+            color: (Color.fromRGBO(18, 140, 126, 0.8)),
+            fontWeight: FontWeight.bold),
+      ),
+    ),
+  );
 }
