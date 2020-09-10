@@ -83,16 +83,16 @@ class _MyHomePageState extends State<MyHomePage>
                       ),
                       ClipOval(
                         child: Container(
-                          width: 20,
-                          height: 20,
-                          color: Colors.grey[100],
+                          width: 22,
+                          height: 22,
+                          color: (Color.fromRGBO(14, 102, 85, 0.5)),
                           child: Center(
                             child: Text(
                               "3",
                               style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 15.5,
-                                  color: Colors.green),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 15,
+                              ),
                             ),
                           ),
                         ),
@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage>
                         child: Container(
                           width: 8.5,
                           height: 8.5,
-                          color: Colors.grey[350],
+                          color: (Color.fromRGBO(14, 102, 85, 0.9)),
                         ),
                       ),
                     ],
