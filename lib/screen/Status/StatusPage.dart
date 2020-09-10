@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/screen/Status_View_Billy.dart';
-import 'package:whatsapp/screen/Status_View_Bobby.dart';
-import 'package:whatsapp/screen/Status_View_Ravi.dart';
+import 'package:whatsapp/screen/Status/StatusViewpage.dart';
 
 class StatusPage extends StatefulWidget {
   StatusPage({Key key}) : super(key: key);
@@ -79,7 +77,7 @@ class _StatusPageState extends State<StatusPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => RaviStatus(),
+                  builder: (context) => StatusViewPage(statusno: 0),
                 ),
               );
             },
@@ -112,7 +110,7 @@ class _StatusPageState extends State<StatusPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => BobbyStatus(),
+                  builder: (context) => StatusViewPage(statusno: 1),
                 ),
               );
             },
@@ -159,7 +157,7 @@ class _StatusPageState extends State<StatusPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => BillyStatus(),
+                  builder: (context) => StatusViewPage(statusno: 2),
                 ),
               );
             },

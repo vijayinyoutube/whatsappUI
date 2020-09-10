@@ -1,33 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:story_view/controller/story_controller.dart';
 import 'package:story_view/story_view.dart';
-import 'package:whatsapp/screen/ChatPage.dart';
+import 'package:whatsapp/repository/StatusRepo.dart';
 
-class BobbyStatus extends StatefulWidget {
-  BobbyStatus({Key key}) : super(key: key);
+class StatusViewPage extends StatefulWidget {
+  final statusno;
+  StatusViewPage({this.statusno});
 
   @override
-  _BobbyStatusState createState() => _BobbyStatusState();
+  _StatusViewPageState createState() => _StatusViewPageState();
 }
 
-class _BobbyStatusState extends State<BobbyStatus> {
+class _StatusViewPageState extends State<StatusViewPage> {
   final mycontroller = StoryController();
-  final List<StoryItem> mystoryItems = [
-    StoryItem.text(
-      title: "My First Status",
-      backgroundColor: Colors.green,
-      textStyle: TextStyle(
-        fontSize: 25,
-      ),
-    ),
-    StoryItem.text(
-      title: "My Second Status",
-      backgroundColor: Colors.blue,
-      textStyle: TextStyle(
-        fontSize: 25,
-      ),
-    )
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -35,7 +21,7 @@ class _BobbyStatusState extends State<BobbyStatus> {
         children: [
           StoryView(
             controller: mycontroller,
-            storyItems: mystoryItems,
+            storyItems: myStatus[widget.statusno].storyItems,
             inline: false,
             onComplete: () {
               Navigator.pop(context);
@@ -51,18 +37,18 @@ class _BobbyStatusState extends State<BobbyStatus> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => BobbyStatus(),
+                      builder: (context) => StatusViewPage(),
                     ),
                   );
                 },
                 leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/Bobby.png"),
+                  backgroundImage: AssetImage(myStatus[widget.statusno].avatar),
                   foregroundColor: Colors.transparent,
                   backgroundColor: Colors.transparent,
                   radius: 30,
                 ),
                 title: Text(
-                  "Bobby",
+                  myStatus[widget.statusno].storyTitle,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
@@ -71,7 +57,7 @@ class _BobbyStatusState extends State<BobbyStatus> {
                 subtitle: Padding(
                   padding: EdgeInsets.only(top: 5),
                   child: Text(
-                    "10 minutes ago",
+                    myStatus[widget.statusno].time,
                     style: TextStyle(fontSize: 15, color: Colors.grey[350]),
                   ),
                 ),
