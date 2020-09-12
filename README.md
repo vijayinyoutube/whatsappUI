@@ -32,7 +32,7 @@ Visit my channel 👉 : https://www.youtube.com/channel/UCBC_Z7jla1GSITcqLKAtPxQ
 <img src="https://user-images.githubusercontent.com/58719230/92987894-4d033c80-f4e4-11ea-862c-14089066c51b.png">
 
 
-<img src="https://user-images.githubusercontent.com/58719230/92405556-7c682100-f153-11ea-9023-fccf30df98bc.png" > <img src="https://user-images.githubusercontent.com/58719230/92628704-da7b3c80-f2ea-11ea-8759-3532c7701ad6.png"> 
+<img src="https://user-images.githubusercontent.com/58719230/92405556-7c682100-f153-11ea-9023-fccf30df98bc.png" > <img src="https://user-images.githubusercontent.com/58719230/92987973-12e66a80-f4e5-11ea-8fb5-86d757225977.png"> 
 
 
 ## License
