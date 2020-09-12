@@ -1,16 +1,31 @@
+import 'dart:io';
+
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:whatsapp/screens/Chats.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:whatsapp/screen/CameraPage.dart';
+import 'package:whatsapp/screen/ChatPage.dart';
+import 'package:whatsapp/screen/StatusPage.dart';
 
 class MyHomePage extends StatefulWidget {
+  // final CameraDescription camera;
+
+  // MyHomePage({@required this.camera});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
+  File image;
+  CameraController _controller;
+  Future<void> _initializeControllerFuture;
   TabController _tabController;
   List<IconData> icons = <IconData>[
-    (Icons.camera),
+    (Icons.camera_alt),
     (Icons.message),
     (Icons.add),
     (Icons.call),
@@ -19,12 +34,19 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(vsync: this, length: icons.length);
+    _tabController =
+        new TabController(length: icons.length, vsync: this, initialIndex: 1);
+    // _controller = CameraController(
+    //   widget.camera,
+    //   ResolutionPreset.medium,
+    // );
+    // _initializeControllerFuture = _controller.initialize();
   }
 
   @override
   void dispose() {
     _tabController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -97,10 +119,17 @@ class _MyHomePageState extends State<MyHomePage>
         body: TabBarView(
           controller: _tabController,
           children: [
-            Center(child: Text("Camera")),
-            ChatPage(),
-            Center(child: Text("Status")),
-            Center(child: Text("Calls")),
+            Center(
+              child: Text("Camera"),
+            ),
+            // Camerapage(
+            //   camera: widget.camera,
+            // ),
+            Chatpage(),
+            StatusPage(),
+            Center(
+              child: Text("Calls"),
+            ),
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -109,7 +138,14 @@ class _MyHomePageState extends State<MyHomePage>
           child: TabBarView(
             controller: _tabController,
             children: [
-              Icon(icons[0]),
+              GestureDetector(
+                  child: Icon(icons[0]),
+                  onTap: () async {
+                    this.setState(() {});
+                    image = await ImagePicker.pickImage(
+                      source: ImageSource.camera,
+                    );
+                  }),
               Icon(icons[1]),
               Icon(icons[2]),
               Icon(icons[3]),
