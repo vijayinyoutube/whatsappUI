@@ -29,7 +29,7 @@ class _StatusViewPageState extends State<StatusViewPage> {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              top: 20,
+              top: 35,
             ),
             child: Container(
               child: ListTile(

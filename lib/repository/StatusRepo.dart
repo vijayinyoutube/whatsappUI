@@ -62,7 +62,7 @@ List<StatusHistory> myStatus = [
     storyItems: <StoryItem>[
       StoryItem.pageImage(
         imageFit: BoxFit.contain,
-        caption: "Flutter Logo",
+        caption: "Flutter is Great 🥳",
         url: "assets/images/FlutterLogo.png",
         controller: null,
       ),
