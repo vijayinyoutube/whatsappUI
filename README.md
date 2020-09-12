@@ -27,6 +27,17 @@ To know more awesome content about Flutter.,
 
 Visit my channel 👉 : https://www.youtube.com/channel/UCBC_Z7jla1GSITcqLKAtPxQ
 
+
+## Dependencies
+
+```
+  image_picker: ^0.5.3+1
+  camera:
+  path_provider:
+  path:
+  story_view: ^0.12.3
+```
+
 ## Sample Results
 
 <img src="https://user-images.githubusercontent.com/58719230/92987894-4d033c80-f4e4-11ea-862c-14089066c51b.png">
