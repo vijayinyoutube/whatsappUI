@@ -18,9 +18,9 @@ WhatsApp UI clone | Flutter app
 
 This is a WhatsApp clone app built using Flutter.
 
-Check out the video tutorial 👉 : https://youtu.be/9GE5siIJc6M
+Check out the video tutorial  Part-1 👉 : https://youtu.be/9GE5siIJc6M
 
-
+Check out the video tutorial  Part-2 👉 : https://youtu.be/jyllQaw7l6M
 
 
 To know more awesome content about Flutter., 
