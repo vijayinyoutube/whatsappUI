@@ -30,7 +30,7 @@ Visit my channel 👉 : https://www.youtube.com/channel/UCBC_Z7jla1GSITcqLKAtPxQ
 
 ## Dependencies
 
-```
+```pubspec.yaml
   image_picker: ^0.5.3+1
   camera:
   path_provider:
